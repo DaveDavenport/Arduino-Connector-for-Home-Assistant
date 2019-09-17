@@ -15,11 +15,7 @@ HomeAssistant::HomeAssistant() { }
  * @param String api_base: Base url for the home assistant server
  * @param String api_pass: Password (if any) for the home assistant server
  */
-void HomeAssistant::begin(const char* ssid, const char* wifi_pass, String api_base, String api_pass) {
-  WiFi.begin(ssid, wifi_pass);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-  }
+void HomeAssistant::begin(String api_base, String api_pass) {
   if (api_base.endsWith("/")) {
     _API_BASE = api_base + "api/";
   } else {
@@ -31,11 +27,6 @@ void HomeAssistant::begin(const char* ssid, const char* wifi_pass, String api_ba
   }
 }
 
-/* @return bool: True if wifi is connected */
-bool HomeAssistant::wifiConnected()
-{
-  return WiFi.status() == WL_CONNECTED;
-}
 
 /* Alias for the healthCheck method to determine if the API is connected */
 bool HomeAssistant::connected()

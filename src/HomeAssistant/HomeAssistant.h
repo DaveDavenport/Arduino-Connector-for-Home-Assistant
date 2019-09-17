@@ -10,9 +10,8 @@ class HomeAssistant
 {
   public:
     HomeAssistant();
-    void begin(const char* ssid, const char* wifi_pass, const String api_base, const String api_pass = "");
+    void begin(const String api_base, const String api_pass = "");
     bool connected();
-    bool wifiConnected();
     String readState(const String entity_id);
     String readResponse(const String entity_id);
     bool setEntityStateWithPayload(const String entity_id, const String payload);
