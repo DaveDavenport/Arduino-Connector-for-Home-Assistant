@@ -3,8 +3,7 @@
 #include "Arduino.h"
 #include "ArduinoJson.h"
 #include "HomeAssistantService.h"
-#include "ESP8266WiFi.h"
-#include "ESP8266HTTPClient.h"
+#include <HTTPClient.h>
 
 HomeAssistant::HomeAssistant() { }
 
